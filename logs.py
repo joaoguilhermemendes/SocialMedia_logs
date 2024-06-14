@@ -27,6 +27,7 @@ login = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELEC
 
 time.sleep(5)
 alert = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='button']"))).click()
+alert2 = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[class='_a9-- _ap36 _a9_1']"))).click()
 
 
 input("Press any key to close browser... ")
