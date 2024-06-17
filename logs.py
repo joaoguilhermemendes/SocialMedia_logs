@@ -20,7 +20,7 @@ password = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SE
 
 username.clear()
 password.clear()
-username.send_keys("xxxxxxxxx")
+username.send_keys("xxxxxxxxxx")
 password.send_keys("xxxxxxxxxxxxxxx")
 
 login = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, "button[type='submit']"))).click()
