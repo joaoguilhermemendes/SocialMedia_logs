@@ -1,4 +1,5 @@
 from colorama import Fore, Style
+from time import sleep
 import instaloader
 
 print(Style.BRIGHT + Fore.GREEN + " ")
@@ -44,12 +45,28 @@ print(Fore.GREEN + "Followers: " + Fore.WHITE + f"{followers}")
 print(Fore.GREEN + "Following: " + Fore.WHITE + f"{followees}")
 print(Fore.GREEN + "Posts: " + Fore.WHITE + f"{posts}")
 posts = []
+open_profile = 0
 print(Fore.YELLOW + "|") 
 for index, post in enumerate(profile.get_posts(), 1): # Get the posts of the user
     posts.append(post)
+    open_profile = 1
     print(Fore.YELLOW + "| - - - >" + Fore.GREEN + f" [{index}]" + Fore.WHITE + f" {str(post.date)[:10]}")
+if open_profile == 0:
+    print(Fore.RED + "Closed Profile!" + Fore.WHITE)
+    print("")
+    print("")
+    exit()
 
 print(" ")
+print(" ")
+
+download = str(input("Download the posts (Y/N)? ")).upper()
+if download == 'Y':
+    for index, post in enumerate(posts, 1):
+        print(Fore.GREEN + " ")
+        loader.download_profile(user, profile_pic=True) # Download the profile picture of the user
+
+print(Fore.WHITE + " ") 
 print(" ")
 
 more_info = str(input("More info (Y/N)? ")).upper()
@@ -66,7 +83,7 @@ while more_info == 'Y':
     print(Fore.GREEN + "COMMENTS: " + Fore.WHITE + f"{posts[post_index-1].comments}")
     print("|")
 
-    loader.login('usename', 'password') # Login with your user and password
+    loader.login('USERNAME', 'PASSWORD') # Login with your user and password
     for comment in posts[post_index-1].get_comments(): # Get the comments of the selected post
         print("| - - > " + Fore.RED + f"@{comment.owner.username}: " + Fore.WHITE + f"{comment.text}")
 
