@@ -1,6 +1,6 @@
 # SocialMedia Logs
 
-This project is designed to manage and analyze instagram logs. It provides tools to collect, process, and visualize data from instagram.
+This project is designed to manage and analyze logs. It provides tools to collect, process, and visualize data from instagram.
 
 
 ## Installation
